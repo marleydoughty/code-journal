@@ -20,8 +20,18 @@
   </header>
   <main>
     <h1>New Entry</h1>
-    <img src="images/placeholder-image-square.jpg">
-
+    <form>
+      <div data-view="entry-form">
+        <label for="title">Title</label>
+        <input type="text" id="title" required>
+        <label for="photo-url">Photo URL</label>
+        <input type="url" id="photo-url" required>
+        <label for="notes" required>Notes</label>
+        <textarea name="notes"></textarea>
+        <label for="save"></label>
+        <input type="submit" value="Save">
+      </div>
+    </form>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
