@@ -16,12 +16,9 @@ function handleSubmit(event) {
   event.preventDefault();
   // var formData = {
   //   title: $formInputs.elements.title.value,
-  //   photoUrl: $formInputs.elements.photoUrl.value,
+  //   photoUrl: $formInputs.elements['photo-url'].value,
   //   notes: $formInputs.elements.notes.value
   // };
-  // console.log('form data:', formData);
-  // $imageTag.reset();
-  // $title.reset();
-  // $notes.reset();
+
 }
 $formInputs.addEventListener('submit', handleSubmit);
