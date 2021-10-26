@@ -21,6 +21,10 @@
   padding-top: 15px;
 }
 
+.align-end {
+  text-align: end;
+}
+
 label {
   line-height: 25px;
 }
@@ -28,6 +32,7 @@ label {
 .button {
   background-color: #562a81;
   color: white;
-  padding: 6px 8px;
+  padding: 5px 14px;
   border-radius: 5px;
+  margin-top: 12px;
 }
