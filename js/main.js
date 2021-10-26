@@ -14,13 +14,15 @@ $photoUrl.addEventListener('input', handleInput);
 var $formInputs = document.querySelector('#form-inputs');
 function handleSubmit(event) {
   event.preventDefault();
-  // var formData = {
-  //   title: $formInputs.elements.title.value,
-  //   photoUrl: $formInputs.elements['photo-url'].value,
-  //   notes: $formInputs.elements.notes.value,
-  //   entryId: data.nextEntryId
-  // };
-  // data.nextEntryId++;
+  var formData = {
+    title: $formInputs.elements.title.value,
+    photoUrl: $formInputs.elements['photo-url'].value,
+    notes: $formInputs.elements.notes.value,
+    entryId: data.nextEntryId
+  };
+  data.nextEntryId++;
+  data.entries.unshift(formData);
+
 }
 
 $formInputs.addEventListener('submit', handleSubmit);
