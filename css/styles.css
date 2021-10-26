@@ -7,6 +7,20 @@
   width: 100%;
 }
 
+#title,
+#notes,
+#photo-url {
+  border-radius: 4px;
+}
+
+input:focus {
+  outline-color: #562a81;
+}
+
+textarea:focus {
+  outline-color: #562a81;
+}
+
 .column-half input {
   width: 100%;
   line-height: 25px;
@@ -35,4 +49,8 @@ label {
   padding: 5px 14px;
   border-radius: 5px;
   margin-top: 12px;
+}
+
+.border-color {
+  border-color: #562a81;
 }
