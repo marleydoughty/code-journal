@@ -17,8 +17,10 @@ function handleSubmit(event) {
   // var formData = {
   //   title: $formInputs.elements.title.value,
   //   photoUrl: $formInputs.elements['photo-url'].value,
-  //   notes: $formInputs.elements.notes.value
+  //   notes: $formInputs.elements.notes.value,
+  //   entryId: data.nextEntryId
   // };
-
+  // data.nextEntryId++;
 }
+
 $formInputs.addEventListener('submit', handleSubmit);
