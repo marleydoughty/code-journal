@@ -1,0 +1,38 @@
+.page-header {
+  background-color: #562a81;
+  color: white;
+}
+
+.column-half > img {
+  width: 100%;
+}
+
+.column-half input {
+  width: 100%;
+  line-height: 25px;
+}
+
+.notes-box {
+  height: 149px;
+}
+
+.photo-url,
+.notes-section {
+  padding-top: 15px;
+}
+
+.align-end {
+  text-align: end;
+}
+
+label {
+  line-height: 25px;
+}
+
+.button {
+  background-color: #562a81;
+  color: white;
+  padding: 5px 14px;
+  border-radius: 5px;
+  margin-top: 12px;
+}
