@@ -26,10 +26,7 @@
   <div class="container">
     <main>
       <form id="form-inputs">
-        <div data-view="entry-form">
-
-        </div>
-        <div data-view="entry-form">
+        <div data-view="entry-form" class="view hidden">
           <div class="row">
             <div class="column-full">
               <h1>New Entry</h1>
@@ -64,6 +61,42 @@
               <button class="button" required>SAVE</button>
             </div>
           </div>
+        </div>
+        <div data-view="entries" class="view">
+          <div class="row space-between">
+            <h1>Entries</h1>
+            <label for="new" required></label>
+            <button class="new-entry-button">NEW</button>
+          </div>
+          <div class="row">
+            <p class="view hidden">No entries have been recorded</p>
+          </div>
+          <ul id="view-entries">
+            <li>
+              <div class="row">
+                <div class="column-half">
+                  <img src="images/placeholder-image-square.jpg">
+                </div>
+                <div class="column-half">
+                  <p>title Lorem ipsum dolor sit amet.</p>
+                  <p>description Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem enim quia earum optio! Maiores adipisci earum alias mollitia eum assumenda numquam molestias! Nesciunt, quisquam dolorem?</p>
+                  <p>description Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem enim quia earum optio! Maiores adipisci earum alias mollitia eum assumenda numquam molestias! Nesciunt, quisquam dolorem?</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="column-half">
+                  <img src="images/placeholder-image-square.jpg">
+                </div>
+                <div class="column-half">
+                  <p>title Lorem ipsum dolor sit amet.</p>
+                  <p>description Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem enim quia earum optio! Maiores adipisci earum alias mollitia eum assumenda numquam molestias! Nesciunt, quisquam dolorem?</p>
+                  <p>description Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident temporibus cum vero rerum autem sapiente. Doloremque ratione nihil aut molestiae laudantium fuga inventore necessitatibus ea!</p>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </form>
     </main>

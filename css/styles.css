@@ -21,10 +21,6 @@
   padding-top: 15px;
 }
 
-.align-end {
-  text-align: end;
-}
-
 label {
   line-height: 25px;
 }
@@ -33,6 +29,21 @@ label {
   background-color: #562a81;
   color: white;
   padding: 5px 14px;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-top: 12px;
+}
+
+.new-entry-button {
+  background-color: #562a81;
+  color: white;
+  margin: 28px 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
