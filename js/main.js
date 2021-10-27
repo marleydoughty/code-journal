@@ -50,7 +50,7 @@ function renderEntries(entry) {
   $column2.className = 'column-half';
   $row.appendChild($column2);
 
-  var $title = document.createElement('h4');
+  var $title = document.createElement('h3');
   $title.textContent = entry.title;
   $column2.appendChild($title);
 
