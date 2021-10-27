@@ -29,36 +29,43 @@ function handleSubmit(event) {
 
 $formInputs.addEventListener('submit', handleSubmit);
 
-function journalEntry(event) {
-  var $allEntries = document.createElement('ul');
-  $allEntries.setAttribute('id', 'view-entries');
+function renderEntries(entry) {
   var $entry = document.createElement('li');
   $entry.className = 'view';
   $allEntries.appendChild($entry);
+
   var $row = document.createElement('div');
   $row.className = 'row';
   $entry.appendChild($row);
+
   var $column1 = document.createElement('div');
   $column1.className = 'column-half';
   $row.appendChild($column1);
+
   var $photo = document.createElement('img');
-  $photo.setAttribute('src', $formInputs.elements['photo-url'].value);
+  $photo.setAttribute('src', entry.photoUrl);
   $column1.appendChild($photo);
+
   var $column2 = document.createElement('div');
   $column2.className = 'column-half';
   $row.appendChild($column2);
-  var $title = document.createElement('h4');
-  $title.textContent = $formInputs.elements.title.value;
-  $column2.appendChild($title);
-  var $notes = document.createElement('p');
-  $notes.textContent = $formInputs.elements.notes.value;
-  $column2.appendChild($notes);
-  return $allEntries;
-}
-var currentEntries = document.querySelector('.row.justify-content');
 
-for (var i = 0; i < data.entries.length; i++) {
-  var newEntry = journalEntry(data.entries[i]);
-  currentEntries.appendChild(newEntry);
+  var $title = document.createElement('h4');
+  $title.textContent = entry.title;
+  $column2.appendChild($title);
+
+  var $notes = document.createElement('p');
+  $notes.textContent = entry.notes;
+  $column2.appendChild($notes);
+
+  return $entry;
 }
-window.addEventListener('DOMContentLoaded', journalEntry);
+var $allEntries = document.querySelector('ul');
+
+function handleDomContent(event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    var newEntry = renderEntries(data.entries[i]);
+    $allEntries.append(newEntry);
+  }
+}
+window.addEventListener('DOMContentLoaded', handleDomContent);

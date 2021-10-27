@@ -3,8 +3,35 @@
   color: white;
 }
 
+/* .page-header a {
+  color: white;
+  text-decoration: none;
+} */
+
+/* nav {
+  position: absolute;
+  top: 28px;
+  left: 350px;
+  bottom: 0;
+  right: 0;
+} */
+
 .column-half > img {
   width: 100%;
+}
+
+#title,
+#notes,
+#photo-url {
+  border-radius: 4px;
+}
+
+input:focus {
+  outline-color: #562a81;
+}
+
+textarea:focus {
+  outline-color: #562a81;
 }
 
 .column-half input {
