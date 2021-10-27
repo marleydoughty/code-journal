@@ -14,12 +14,20 @@
   flex-wrap: wrap;
 }
 
+.justify-content {
+  justify-content: center;
+}
+
 .space-between {
   justify-content: space-between;
 }
 
 .align-end {
   text-align: end;
+}
+
+.background {
+  background-color: #f0f0f0;
 }
 
 .column-full,
