@@ -4,9 +4,6 @@ var $photoUrl = document.querySelector('#photo-url');
 var $imageTag = document.querySelector('img');
 var $formInputs = document.querySelector('#form-inputs');
 // var $newEntryButton = document.querySelector('.new-entry-button');
-// var $save = document.querySelector('.button');
-// var $title = document.querySelector('#title');
-// var $notes = document.querySelector('#notes');
 
 function handleInput(event) {
   $imageTag.setAttribute('src', event.target.value);
@@ -69,3 +66,29 @@ function handleDomContent(event) {
   }
 }
 window.addEventListener('DOMContentLoaded', handleDomContent);
+
+// var $tabs = document.querySelectorAll('.viewTab');
+// var $tabView = document.querySelectorAll('[data-view]');
+// var $formContainer = document.querySelector('#form-inputs');
+
+// function activeView(event) {
+//   if (event.target.matches('.viewTab')) {
+//     for (var i = 0; i < $tabs.length; i++) {
+//       if (event.target === $tabs[i]) {
+//         $tabs[i].className = 'viewTab';
+//       } else {
+//         $tabs[i].className = 'viewTab hidden';
+//       }
+//     }
+//   }
+// }
+// if (event.target.matches('.viewTab')) {
+//   var viewContent = event.target.getAttribute('data-view');
+//   for (var vi = 0; vi < $tabView.length; vi++);
+//   if ($tabView[vi].getAttribute('data-view') === viewContent) {
+//     $tabView[vi].className = 'viewTab';
+//   } else {
+//     $tabView[vi].className = 'viewTab hidden';
+//   }
+// }
+// $formContainer.addEventListener('click', activeView);

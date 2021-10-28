@@ -1,11 +1,23 @@
 .page-header {
   background-color: #562a81;
   color: white;
+  font-weight: 100;
 }
 
-/* .page-header a {
+.page-header h2 {
+  font-weight: 100;
+}
+
+/*
+.page-header nav {
   color: white;
   text-decoration: none;
+  font-size: 14px;
+  position: absolute;
+  top: 28px;
+  left: 375px;
+  bottom: 0;
+  right: 0;
 } */
 
 /* nav {
