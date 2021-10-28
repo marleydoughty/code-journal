@@ -22,6 +22,9 @@ function handleSubmit(event) {
   data.entries.unshift(formData);
   $imageTag.setAttribute('src', 'images/placeholder-image-square.jpg');
   $formInputs.reset();
+  var newEntry = renderEntries(formData);
+  $allEntries.prepend(newEntry);
+  changeView('entries');
 }
 
 $formInputs.addEventListener('submit', handleSubmit);
@@ -67,28 +70,23 @@ function handleDomContent(event) {
 }
 window.addEventListener('DOMContentLoaded', handleDomContent);
 
-// var $tabs = document.querySelectorAll('.viewTab');
-// var $tabView = document.querySelectorAll('[data-view]');
-// var $formContainer = document.querySelector('#form-inputs');
+var $buttons = document.querySelectorAll('[data-link]');
+var $tabView = document.querySelectorAll('[data-view]');
 
-// function activeView(event) {
-//   if (event.target.matches('.viewTab')) {
-//     for (var i = 0; i < $tabs.length; i++) {
-//       if (event.target === $tabs[i]) {
-//         $tabs[i].className = 'viewTab';
-//       } else {
-//         $tabs[i].className = 'viewTab hidden';
-//       }
-//     }
-//   }
-// }
-// if (event.target.matches('.viewTab')) {
-//   var viewContent = event.target.getAttribute('data-view');
-//   for (var vi = 0; vi < $tabView.length; vi++);
-//   if ($tabView[vi].getAttribute('data-view') === viewContent) {
-//     $tabView[vi].className = 'viewTab';
-//   } else {
-//     $tabView[vi].className = 'viewTab hidden';
-//   }
-// }
-// $formContainer.addEventListener('click', activeView);
+function activeView(event) {
+  var viewContent = event.target.getAttribute('data-link');
+  changeView(viewContent);
+}
+function changeView(viewContent) {
+  for (var vi = 0; vi < $tabView.length; vi++) {
+    if ($tabView[vi].getAttribute('data-view') === viewContent) {
+      $tabView[vi].className = 'viewTab';
+    } else {
+      $tabView[vi].className = 'viewTab hidden';
+    }
+  }
+}
+
+for (var i = 0; i < $buttons.length; i++) {
+  $buttons[i].addEventListener('click', activeView);
+}
