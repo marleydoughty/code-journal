@@ -3,7 +3,6 @@
 var $photoUrl = document.querySelector('#photo-url');
 var $imageTag = document.querySelector('img');
 var $formInputs = document.querySelector('#form-inputs');
-// var $newEntryButton = document.querySelector('.new-entry-button');
 
 function handleInput(event) {
   $imageTag.setAttribute('src', event.target.value);
@@ -53,6 +52,10 @@ function renderEntries(entry) {
   var $title = document.createElement('h3');
   $title.textContent = entry.title;
   $column2.appendChild($title);
+
+  var $editIcon = document.createElement('i');
+  $editIcon.className = 'fas fa-pen';
+  $column2.appendChild($editIcon);
 
   var $notes = document.createElement('p');
   $notes.textContent = entry.notes;
