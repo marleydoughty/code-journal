@@ -84,6 +84,7 @@ var $tabView = document.querySelectorAll('[data-view]');
 function activeView(event) {
   var viewContent = event.target.getAttribute('data-link');
   changeView(viewContent);
+
 }
 function changeView(viewContent) {
   for (var vi = 0; vi < $tabView.length; vi++) {
@@ -99,10 +100,11 @@ for (var i = 0; i < $buttons.length; i++) {
   $buttons[i].addEventListener('click', activeView);
 }
 
-// function handleEditIcon(event) {
+// function clickEditIcon(event) {
 //   if (event.target && event.target.tagName === 'I') {
 //     var $viewClosestEntry = event.target.closest('.view');
-//     console.log('closest .view', $viewClosestEntry);
+//     changeView('entry-form');
 //   }
+
 // }
-// $allEntries.addEventListener('click', handleEditIcon);
+// $allEntries.addEventListener('click', clickEditIcon);
