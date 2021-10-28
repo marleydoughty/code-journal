@@ -50,13 +50,17 @@ function renderEntries(entry) {
   $column2.className = 'column-half';
   $row.appendChild($column2);
 
+  var $row2 = document.createElement('div');
+  $row2.className = 'row space-between';
+  $column2.appendChild($row2);
+
   var $title = document.createElement('h3');
   $title.textContent = entry.title;
-  $column2.appendChild($title);
+  $row2.appendChild($title);
 
   var $editIcon = document.createElement('i');
   $editIcon.className = 'fas fa-pen';
-  $title.appendChild($editIcon);
+  $row2.appendChild($editIcon);
 
   var $notes = document.createElement('p');
   $notes.textContent = entry.notes;
@@ -94,3 +98,11 @@ function changeView(viewContent) {
 for (var i = 0; i < $buttons.length; i++) {
   $buttons[i].addEventListener('click', activeView);
 }
+
+// function handleEditIcon(event) {
+//   if (event.target && event.target.tagName === 'I') {
+//     var $viewClosestEntry = event.target.closest('.view');
+//     console.log('closest .view', $viewClosestEntry);
+//   }
+// }
+// $allEntries.addEventListener('click', handleEditIcon);

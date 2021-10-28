@@ -26,7 +26,6 @@ a:visited {
 
 .column-half > img {
   width: 100%;
-  object-fit: contain;
 }
 
 #title,
@@ -89,9 +88,6 @@ li {
 
 h3 {
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .fas {
