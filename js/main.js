@@ -31,6 +31,7 @@ $formInputs.addEventListener('submit', handleSubmit);
 function renderEntries(entry) {
   var $entry = document.createElement('li');
   $entry.className = 'view';
+  $entry.setAttribute('data-entry-id', entry.entryId);
   $allEntries.appendChild($entry);
 
   var $row = document.createElement('div');
@@ -55,7 +56,7 @@ function renderEntries(entry) {
 
   var $editIcon = document.createElement('i');
   $editIcon.className = 'fas fa-pen';
-  $column2.appendChild($editIcon);
+  $title.appendChild($editIcon);
 
   var $notes = document.createElement('p');
   $notes.textContent = entry.notes;
