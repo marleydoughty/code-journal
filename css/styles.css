@@ -1,7 +1,36 @@
 .page-header {
   background-color: #562a81;
   color: white;
+  font-weight: 100;
 }
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+a:visited {
+  color: white;
+}
+
+.page-header h2 {
+  font-weight: 100;
+  margin-right: 20px;
+}
+
+.page-header a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* nav {
+  position: absolute;
+  top: 28px;
+  left: 350px;
+  bottom: 0;
+  right: 0;
+} */
 
 .column-half > img {
   width: 100%;
@@ -35,10 +64,6 @@ textarea:focus {
   padding-top: 15px;
 }
 
-.align-end {
-  text-align: end;
-}
-
 label {
   line-height: 25px;
 }
@@ -47,10 +72,30 @@ label {
   background-color: #562a81;
   color: white;
   padding: 5px 14px;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-top: 12px;
 }
 
-.border-color {
-  border-color: #562a81;
+
+.new-entry-button {
+  background-color: #562a81;
+  color: white;
+  margin: 28px 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+}
+
+#view-entries {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+h3 {
+  margin: 0;
+
 }
