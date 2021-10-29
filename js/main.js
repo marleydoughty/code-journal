@@ -100,11 +100,18 @@ for (var i = 0; i < $buttons.length; i++) {
   $buttons[i].addEventListener('click', activeView);
 }
 
-// function clickEditIcon(event) {
-//   if (event.target && event.target.tagName === 'I') {
-//     var $viewClosestEntry = event.target.closest('.view');
-//     changeView('entry-form');
-//   }
+function clickEditIcon(event) {
+  if (event.target && event.target.tagName === 'I') {
+    var $viewClosestEntry = event.target.closest('.view');
+    changeView('entry-form');
+    var entryIdNumber = $viewClosestEntry.getAttribute('data-entry-id');
 
-// }
-// $allEntries.addEventListener('click', clickEditIcon);
+    for (var ei = 0; ei < data.entries.length; ei++) {
+      if (Number(entryIdNumber) === data.entries[ei].entryId) {
+        $viewClosestEntry = data.editing;
+      }
+      // console.log('editing entry number:', $viewClosestEntry);
+    }
+  }
+}
+$allEntries.addEventListener('click', clickEditIcon);
