@@ -17,13 +17,21 @@ function handleSubmit(event) {
     notes: $formInputs.elements.notes.value,
     entryId: data.nextEntryId
   };
+  var newEntry = renderEntries(formData);
+  // if (data.editing !== null) {
+  //   // find index by comparing Id
+  //   // overwrite entry in datamodel
+  //   // override html element
+  //   // set data.editing back to null
+  // } else {
   data.nextEntryId++;
   data.entries.unshift(formData);
+  $allEntries.prepend(newEntry);
+  // }
   $imageTag.setAttribute('src', 'images/placeholder-image-square.jpg');
   $formInputs.reset();
-  var newEntry = renderEntries(formData);
-  $allEntries.prepend(newEntry);
   changeView('entries');
+
 }
 
 $formInputs.addEventListener('submit', handleSubmit);
@@ -100,6 +108,9 @@ for (var i = 0; i < $buttons.length; i++) {
   $buttons[i].addEventListener('click', activeView);
 }
 
+var $titleInput = document.querySelector('#title');
+var $notes = document.querySelector('#notes');
+
 function clickEditIcon(event) {
   if (event.target && event.target.tagName === 'I') {
     var $viewClosestEntry = event.target.closest('.view');
@@ -108,9 +119,11 @@ function clickEditIcon(event) {
 
     for (var ei = 0; ei < data.entries.length; ei++) {
       if (Number(entryIdNumber) === data.entries[ei].entryId) {
-        $viewClosestEntry = data.editing;
+        data.editing = data.entries[ei];
       }
-      // console.log('editing entry number:', $viewClosestEntry);
+      $titleInput.value = data.editing.title;
+      $photoUrl.value = data.editing.photoUrl;
+      $notes.value = data.editing.notes;
     }
   }
 }
