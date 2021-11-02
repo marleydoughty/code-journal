@@ -18,16 +18,21 @@ function handleSubmit(event) {
     entryId: data.nextEntryId
   };
   var newEntry = renderEntries(formData);
-  // if (data.editing !== null) {
-  //   // find index by comparing Id
-  //   // overwrite entry in datamodel
-  //   // override html element
-  //   // set data.editing back to null
-  // } else {
-  data.nextEntryId++;
-  data.entries.unshift(formData);
-  $allEntries.prepend(newEntry);
-  // }
+  if (data.editing !== null) {
+    formData.entryId = data.editing.entryId;
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.editing.entryId === data.entries[i].entryId) {
+        data.entries[i] = formData;
+        $allEntries.children[i].replaceWith(newEntry);
+        data.editing = null;
+        break;
+      }
+    }
+  } else {
+    data.nextEntryId++;
+    data.entries.unshift(formData);
+    $allEntries.prepend(newEntry);
+  }
   $imageTag.setAttribute('src', 'images/placeholder-image-square.jpg');
   $formInputs.reset();
   changeView('entries');
