@@ -24,14 +24,6 @@ a:visited {
   font-size: 14px;
 }
 
-/* nav {
-  position: absolute;
-  top: 28px;
-  left: 350px;
-  bottom: 0;
-  right: 0;
-} */
-
 .column-half > img {
   width: 100%;
 }
@@ -76,7 +68,6 @@ label {
   margin-top: 12px;
 }
 
-
 .new-entry-button {
   background-color: #562a81;
   color: white;
@@ -97,5 +88,9 @@ li {
 
 h3 {
   margin: 0;
+}
 
+.fas {
+  font-weight: 900;
+  color: #562a81;
 }
