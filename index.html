@@ -25,6 +25,15 @@
     </header>
   </div>
   <div class="container">
+    <div class="modal-outer hidden">
+      <div class="modal-content">
+        <h3>Are you sure you want to delete this entry?</h3>
+        <div class="row space-between width">
+          <button id="cancel">Cancel</button>
+          <button id="confirm">Confirm</button>
+        </div>
+      </div>
+    </div>
     <main>
       <form id="form-inputs">
         <div data-view="entry-form" class="viewTab hidden">
@@ -56,16 +65,15 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="column-full align-end">
-              <label for="save"></label>
-              <button class="button" required>SAVE</button>
-            </div>
+          <div class="row space-between margin">
+            <a id="delete" href="#">Delete Entry</a>
+            <label for="save"></label>
+            <button class="button" required>SAVE</button>
           </div>
         </div>
         <div data-view="entries" class="viewTab">
           <div class="row space-between">
-            <h1>Entries</h1>
+            <h1 class="entries-log">Entries</h1>
             <label for="new" required></label>
             <button class="new-entry-button" data-link="entry-form">NEW</button>
           </div>

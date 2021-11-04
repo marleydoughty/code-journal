@@ -133,3 +133,20 @@ function clickEditIcon(event) {
   }
 }
 $allEntries.addEventListener('click', clickEditIcon);
+var $deleteLink = document.querySelector('#delete');
+var $confirmDeleteButton = document.querySelector('#confirm');
+var $cancelDeleteButton = document.querySelector('#cancel');
+var $modalOuter = document.querySelector('.modal-outer');
+
+function openDeleteLink(event) {
+  $modalOuter.className = 'modal-outer';
+}
+function closeDeleteLink(event) {
+  $modalOuter.className = 'modal-outer hidden';
+}
+function deleteEntry(event) {
+  $allEntries.remove(data.entries[i]);
+}
+$deleteLink.addEventListener('click', openDeleteLink);
+$cancelDeleteButton.addEventListener('click', closeDeleteLink);
+$confirmDeleteButton.addEventListener('click', deleteEntry);
