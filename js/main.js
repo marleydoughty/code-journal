@@ -42,6 +42,9 @@ function handleSubmit(event) {
 $formInputs.addEventListener('submit', handleSubmit);
 
 function renderEntries(entry) {
+  if (entry === null) {
+    return null;
+  }
   var $entry = document.createElement('li');
   $entry.className = 'view';
   $entry.setAttribute('data-entry-id', entry.entryId);
@@ -145,7 +148,7 @@ function closeDeleteLink(event) {
   $modalOuter.className = 'modal-outer hidden';
 }
 function deleteEntry(event) {
-  $allEntries.remove(data.entries[i]);
+  data.entries[i].remove();
 }
 $deleteLink.addEventListener('click', openDeleteLink);
 $cancelDeleteButton.addEventListener('click', closeDeleteLink);
