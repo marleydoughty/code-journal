@@ -4,11 +4,10 @@ var $photoUrl = document.querySelector('#photo-url');
 var $imageTag = document.querySelector('img');
 var $formInputs = document.querySelector('#form-inputs');
 
-function handleInput(event) {
+function handlePhotoInput(event) {
   $imageTag.setAttribute('src', event.target.value);
 }
-$photoUrl.addEventListener('input', handleInput);
-
+$photoUrl.addEventListener('input', handlePhotoInput);
 function handleSubmit(event) {
   event.preventDefault();
   var formData = {
@@ -17,7 +16,8 @@ function handleSubmit(event) {
     notes: $formInputs.elements.notes.value,
     entryId: data.nextEntryId
   };
-  var newEntry = renderEntries(formData);
+
+  var newEntry = renderEntry(formData);
   if (data.editing !== null) {
     formData.entryId = data.editing.entryId;
     for (var i = 0; i < data.entries.length; i++) {
@@ -41,10 +41,7 @@ function handleSubmit(event) {
 
 $formInputs.addEventListener('submit', handleSubmit);
 
-function renderEntries(entry) {
-  if (entry === null) {
-    return null;
-  }
+function renderEntry(entry) {
   var $entry = document.createElement('li');
   $entry.className = 'view';
   $entry.setAttribute('data-entry-id', entry.entryId);
@@ -88,7 +85,7 @@ var $allEntries = document.querySelector('ul');
 
 function handleDomContent(event) {
   for (var i = 0; i < data.entries.length; i++) {
-    var newEntry = renderEntries(data.entries[i]);
+    var newEntry = renderEntry(data.entries[i]);
     $allEntries.append(newEntry);
   }
 }
@@ -122,16 +119,17 @@ var $notes = document.querySelector('#notes');
 function clickEditIcon(event) {
   if (event.target && event.target.tagName === 'I') {
     var $viewClosestEntry = event.target.closest('.view');
-    changeView('entry-form');
     var entryIdNumber = $viewClosestEntry.getAttribute('data-entry-id');
 
+    changeView('entry-form');
     for (var ei = 0; ei < data.entries.length; ei++) {
       if (Number(entryIdNumber) === data.entries[ei].entryId) {
         data.editing = data.entries[ei];
+        $titleInput.value = data.editing.title;
+        $photoUrl.value = data.editing.photoUrl;
+        $notes.value = data.editing.notes;
+        $imageTag.setAttribute('src', data.editing.photoUrl);
       }
-      $titleInput.value = data.editing.title;
-      $photoUrl.value = data.editing.photoUrl;
-      $notes.value = data.editing.notes;
     }
   }
 }
@@ -148,7 +146,15 @@ function closeDeleteLink(event) {
   $modalOuter.className = 'modal-outer hidden';
 }
 function deleteEntry(event) {
-  data.entries[i].remove();
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === data.editing.entryId) {
+      data.editing = null;
+      data.entries.splice(i, 1);
+      $allEntries.children[i].remove();
+      changeView('entries');
+      closeDeleteLink();
+    }
+  }
 }
 $deleteLink.addEventListener('click', openDeleteLink);
 $cancelDeleteButton.addEventListener('click', closeDeleteLink);
